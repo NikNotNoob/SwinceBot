@@ -1,0 +1,13 @@
+{
+  "name": "swince-bot",
+  "version": "1.0.0",
+  "description": "Ca swince",
+  "main": "bot.js",
+  "author": "NikNotNoob",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "discord.js": "^11.6.4",
+    "mongodb": "^3.6.8",
+    "winston": "^3.3.3"
+  }
+}
