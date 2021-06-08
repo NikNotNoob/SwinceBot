@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const config = require('./config');
 const auth = require('./auth');
 const fs = require('fs');
+const path = require('path');
 const bot = new Discord.Client({disableEveryone: true});
 
 const prefix = '>';
@@ -53,7 +54,7 @@ bot.on('message', message => {
             if(swince[message.author.id]) swince[message.author.id]++;
             else swince[message.author.id] = 1;
             data = JSON.stringify(swince, null, 2);
-            fs.writeFile(process.cwd() + '\\config.json', data, (err) => {
+            fs.writeFile(path.resolve(__dirname, 'config.json'), data, (err) => {
                 if (err) {
                     console.log(err);
                     return;
@@ -66,7 +67,7 @@ bot.on('message', message => {
     if(command === "swincestats") {
         let swince;
         let swince_count;
-        fs.readFile(process.cwd() + '\\config.json', (err, data) => {
+        fs.readFile(path.resolve(__dirname, 'config.json'), (err, data) => {
             if (err) {
                 console.log(err);
                 return;
