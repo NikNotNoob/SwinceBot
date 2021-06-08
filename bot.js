@@ -45,7 +45,7 @@ bot.on('message', message => {
         let swince;
         let data;
 
-        fs.readFile('config.json', (err, data) => {
+        fs.readFile(path.resolve(__dirname, 'config.json'), (err, data) => {
             if (err) {
                 console.log(err);
                 return;
