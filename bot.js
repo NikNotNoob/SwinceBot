@@ -53,7 +53,7 @@ bot.on('message', message => {
             if(swince[message.author.id]) swince[message.author.id]++;
             else swince[message.author.id] = 1;
             data = JSON.stringify(swince, null, 2);
-            fs.writeFile('config.json', data, (err) => {
+            fs.writeFile(process.cwd() + '\\config.json', data, (err) => {
                 if (err) {
                     console.log(err);
                     return;
@@ -66,7 +66,7 @@ bot.on('message', message => {
     if(command === "swincestats") {
         let swince;
         let swince_count;
-        fs.readFile('config.json', (err, data) => {
+        fs.readFile(process.cwd() + '\\config.json', (err, data) => {
             if (err) {
                 console.log(err);
                 return;
