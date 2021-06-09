@@ -41,7 +41,7 @@ bot.on('message', message => {
             message.channel.send(helpMessage);
     }
 
-    if(command === "swince") {
+    if(command === "addswince") {
         let swince;
         let data;
 
@@ -60,6 +60,29 @@ bot.on('message', message => {
                     return;
                 }
                 message.channel.send(`+1 swince pour ${message.author.username}! ${swince[message.author.id]} à date!`);
+            });
+        });
+    }
+
+    if(command === "swince") {
+        let swince;
+        let data;
+
+        fs.readFile(path.resolve(__dirname, 'config.json'), (err, data) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            swince = JSON.parse(data);
+            if(swince[message.author.id] && swince[message.author.id] > 0) swince[message.author.id]--;
+            else swince[message.author.id] = 0;
+            data = JSON.stringify(swince, null, 2);
+            fs.writeFile(path.resolve(__dirname, 'config.json'), data, (err) => {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                message.channel.send(`${message.author.username} a soincé! ${swince[message.author.id]} restantes!`);
             });
         });
     }
