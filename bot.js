@@ -6,6 +6,7 @@ const path = require('path');
 const bot = new Discord.Client({disableEveryone: true});
 
 const prefix = '>';
+let xdSent = false;
 
 bot.once('ready', () => {
     console.log(`${bot.user.tag} has logged in.`);
@@ -17,6 +18,13 @@ bot.on('guildCreate', guild => console.log(`${bot.user.tag} has joined ${guild.n
 bot.on('guildDelete', guild => console.log(`${bot.user.tag} has left ${guild.name}.`));
 
 bot.on('message', message => {
+
+    if(message.author.id == "218406279683506177" && !xdSent) {
+        xdSent = true;
+        message.channel.send("*Du coup, " + message.content + "* **XD**").then(msg => {
+            setTimeout(() => msg.delete(), 1000);
+        });
+    }
 
     if(message.author.bot) return;
     if(message.content.indexOf(prefix) !== 0) return;
