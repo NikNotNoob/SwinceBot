@@ -4,6 +4,7 @@ const auth = require('./auth');
 const fs = require('fs');
 const path = require('path');
 const bot = new Discord.Client({disableEveryone: true});
+const  googleIt = require('google-it');
 
 const prefix = '>';
 let xdSent = false;
@@ -27,6 +28,7 @@ bot.on('message', message => {
     }
 
     if(message.author.bot) return;
+    if(message.webhookID) return;
     if(message.content.indexOf(prefix) !== 0) return;
 
     //The regex in this case will remove many consecutive spaces, instead of just one
@@ -107,6 +109,26 @@ bot.on('message', message => {
             swince_count = (swince[message.author.id] === undefined) ? 0 : swince[message.author.id];
             message.channel.send(`${swince_count} swinces à date pour ${message.author.username}!`);
         });
+    }
+
+    if(command === "ask") {
+        message.channel.fetchWebhooks().then(async webhooks => {
+            let webhook = webhooks.first();
+            if(!webhook) {
+                webhook = await message.channel.createWebhook('SwinceBotHook');
+            }
+
+            let messageToSend = "***vu***";
+            googleIt({'query': args.join(' ')}).then(results => {
+                if(results) messageToSend = results[0].link;
+                webhook.send(messageToSend, {
+                    username: 'Domingo',
+                    avatarURL: 'https://pbs.twimg.com/profile_images/715220412217565184/xV-alGUk.jpg',
+                });
+            }).catch(e => {
+                console.log(e);
+            })
+        })
     }
 });
 
