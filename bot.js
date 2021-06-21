@@ -112,7 +112,7 @@ bot.on('message', message => {
 
             let messageToSend = "***vu***";
             googleIt({'query': args.join(' ')}).then(results => {
-                if(results) messageToSend = results[0].link;
+                if(results.length) messageToSend = results[0].link;
                 webhook.send(messageToSend, {
                     username: 'Domingo',
                     avatarURL: 'https://pbs.twimg.com/profile_images/715220412217565184/xV-alGUk.jpg',
