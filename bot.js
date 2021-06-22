@@ -103,7 +103,7 @@ bot.on('message', message => {
         });
     }
 
-    /*if(command === "ask") {
+    if(command === "ask") {
         message.channel.fetchWebhooks().then(async webhooks => {
             let webhook = webhooks.first();
             if(!webhook) {
@@ -121,7 +121,7 @@ bot.on('message', message => {
                 console.log(e);
             })
         })
-    }*/
+    }
 });
 
 bot.on('error', err => {
