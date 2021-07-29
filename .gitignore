@@ -2,3 +2,6 @@ node_modules/
 package-lock.json
 auth.json
 .vscode/
+tmp/
+.eslintrc.js
+swince-counter.json

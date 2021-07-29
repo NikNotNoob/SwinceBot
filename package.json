@@ -1,13 +1,28 @@
 {
-  "name": "swince-bot",
-  "version": "1.0.0",
-  "description": "Ca swince",
-  "main": "bot.js",
-  "author": "NikNotNoob",
-  "dependencies": {
-    "discord.io": "^2.5.3",
-    "discord.js": "^11.6.4",
-    "google-it": "^1.6.2",
-    "winston": "^3.3.3"
-  }
+	"name": "swince-bot",
+	"version": "1.0.0",
+	"description": "Ca swince",
+	"main": "bot.js",
+	"author": "NikNotNoob",
+	"dependencies": {
+		"axios": "^0.21.1",
+		"discord.io": "^2.5.3",
+		"discord.js": "^11.6.4",
+		"google-it": "^1.6.2",
+		"pdf-image": "^2.0.0",
+		"winston": "^3.3.3"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^4.28.5",
+		"@typescript-eslint/parser": "^4.28.5",
+		"eslint": "^7.31.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"prettier": "^2.3.2",
+		"typescript": "^4.3.5"
+	},
+	"scripts": {
+		"run": "node %npm_package_main%"
+	}
 }
