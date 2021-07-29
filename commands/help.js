@@ -12,7 +12,7 @@ module.exports = {
 			.setDescription("Exclusivités Twisted Tea");
 
 		const commandFiles = fs
-			.readdirSync(`${process.cwd()}/commands`)
+			.readdirSync(__dirname)
 			.filter((file) => file.endsWith(".js"));
 
 		for (const file of commandFiles) {

@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
+const path = require("path");
 
 module.exports = {
 	name: "ready",
@@ -10,7 +11,7 @@ module.exports = {
 
 		client.commands = new Discord.Collection();
 		const commandFiles = fs
-			.readdirSync(`${process.cwd()}/commands`)
+			.readdirSync(path.join(__dirname, "..", "commands"))
 			.filter((file) => file.endsWith(".js"));
 
 		for (const file of commandFiles) {
