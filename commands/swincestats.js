@@ -9,17 +9,22 @@ module.exports = {
 	handle(message, args) {
 		let swince;
 		let swince_count;
-		fs.readFile(path.resolve(process.cwd(), config.swinceFile), (err, data) => {
-			if (err) {
-				console.log(err);
-				return;
+		fs.readFile(
+			path.resolve(__dirname, `../${config.swinceFile}`),
+			(err, data) => {
+				if (err) {
+					console.log(err);
+					return;
+				}
+				swince = JSON.parse(data);
+				swince_count =
+					swince[message.author.id] === undefined
+						? 0
+						: swince[message.author.id];
+				message.channel.send(
+					`${swince_count} swinces à date pour ${message.author.username}!`
+				);
 			}
-			swince = JSON.parse(data);
-			swince_count =
-				swince[message.author.id] === undefined ? 0 : swince[message.author.id];
-			message.channel.send(
-				`${swince_count} swinces à date pour ${message.author.username}!`
-			);
-		});
+		);
 	},
 };
