@@ -10,6 +10,15 @@ module.exports = {
 		let swince;
 		let newData;
 
+		fs.writeFile(
+			path.resolve(__dirname, `../${config.swinceFile}`),
+			JSON.stringify({}),
+			{ flag: "wx" },
+			(err) => {
+				if (err) throw err;
+			}
+		);
+
 		fs.readFile(
 			path.resolve(__dirname, `../${config.swinceFile}`),
 			(err, data) => {
