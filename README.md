@@ -6,7 +6,7 @@ SwinceBot est un bot vraiment épais qui sert à faire plein de trucs pour les �
 
 Liste des fonctionnalités sur lesquelles je développe en ce moment :
 
-- Transformation de PDF en PDF lisible : Puisque plusieurs sont tannés de ne pas pouvoir faire Ctrl-F sur les documents PDFs fournis par l'université, puisqu'ils sont photocopiés, je travaille sur une commande qui va pouvoir ajouter du texte en arrière plan d'un document PDF fourni en paramètre afin qu'il en soit possible de faire de la recherche;
+- Transformation de PDF en PDF lisible : Puisque plusieurs sont tannés de ne pas pouvoir faire Ctrl-F sur les documents PDFs fournis par l'université, puisqu'ils sont photocopiés, je travaille sur une commande qui va pouvoir ajouter du texte en arrière plan d'un document PDF fourni en paramètre afin qu'il en soit possible de faire de la recherche, en utilisant l'API Cloud Vision de Google;
 
 Liste de fonctionalités futures:
 
