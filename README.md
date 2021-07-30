@@ -1,6 +1,6 @@
 # SwinceBot
 
-SwinceBot est un bot d'usage multiple pour les étudiants en Génie Info.
+SwinceBot est un bot vraiment épais qui sert à faire plein de trucs pour les étudiants en Génie Info.
 
 ## Prérequis
 
@@ -16,6 +16,14 @@ Afin de configurer le projet, il doit exister un fichier `auth.json` à la racin
 {
 	"token": "{INSÉRER VOTRE TOKEN DE BOT DISCORD ICI}",
 	"debugMode": false
+}
+```
+
+Si jamais vous voulez changer le préfix d'utilisation du bot, il faut le changer dans `config.json`. Le préfix est `>` par défaut.
+
+```json
+{
+	"prefix": "{PRÉFIX QUE VOUS VOULEZ}"
 }
 ```
 
@@ -35,4 +43,4 @@ node bot.js
 
 ## Contribution
 
-Contactez-moi sur Discord si vous voulez contribuer au développement du Bot. Nik#9393
+J'accèpte les contributions en bières ou coupes de vins, mais si vous voulez aider avec le bot, vous pouvez me contacter sur Discord: Nik#9393
