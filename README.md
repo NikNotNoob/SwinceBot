@@ -28,7 +28,7 @@ Liste d'améliorations futures :
 
 ## Prérequis
 
-Utilisez [NodeJS](https://pip.pypa.io/en/stable/) et installer les dépendances avec npm.
+Utilisez [NodeJS](https://nodejs.org/en/download/) et installer les dépendances avec npm.
 
 ```bash
 npm install
