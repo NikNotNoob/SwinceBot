@@ -2,6 +2,30 @@
 
 SwinceBot est un bot vraiment épais qui sert à faire plein de trucs pour les étudiants en Génie Info.
 
+## Fonctionalités et amélioration en développement
+
+Liste des fonctionnalités sur lesquelles je développe en ce moment :
+
+- Transformation de PDF en PDF lisible : Puisque plusieurs sont tannés de ne pas pouvoir faire Ctrl-F sur les documents PDFs fournis par l'université, puisqu'ils sont photocopiés, je travaille sur une commande qui va pouvoir ajouter du texte en arrière plan d'un document PDF fourni en paramètre afin qu'il en soit possible de faire de la recherche;
+
+Liste de fonctionalités futures:
+
+- Intégration d'un API mathématique tel que WolframAlpha pour solutionner des équations directement avec le bot;
+
+- Polls et votes;
+
+- Système de notifications pour de nouvelles notes qui sortent;
+
+Liste d'améliorations futures :
+
+- Fonctions de lecture et écriture de fichier simplifiés afin de toujours créer un fichier et les dossiers qui le contiennent s'ils n'existent pas;
+
+- Implémentation de TypeScript pour les commandes et évenements qui contiennent la même syntaxe;
+
+- Placement des compteurs de soinces dans une BD;
+
+- Paramétrisation de la variable `debug` dans le fichier `auth.json`;
+
 ## Prérequis
 
 Utilisez [NodeJS](https://pip.pypa.io/en/stable/) et installer les dépendances avec npm.
